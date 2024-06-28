@@ -1,5 +1,5 @@
 import pickle
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 import uvicorn
 
 app = FastAPI()
@@ -35,7 +35,7 @@ def check_model():
 
 # Predict
 @app.post('/predict')
-async def predict(request: Request):
+async def predict(response: Response, request: Request):
     # get data from request
     data = await request.json()
     
