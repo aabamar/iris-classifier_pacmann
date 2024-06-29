@@ -75,7 +75,3 @@ async def predict(response: Response, request: Request):
             "error": str(e)
         }
         return result
-    
-# Run API with uvicorn
-if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=8000)
